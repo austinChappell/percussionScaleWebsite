@@ -1,0 +1,233 @@
+body {
+  background-image: url('images/old-yellow-vintage-music-notes-background.jpg');
+  background-size: cover;
+  font-family: 'PT Serif', serif;
+  padding-bottom: 150px;
+  text-align: center;
+}
+
+h1 {
+  color: #0e1111;
+  font-family: 'Courgette', cursive;
+  font-size: 4rem;
+  text-align: center;
+}
+
+.title-instructions-section {
+  padding: 40px 40px 0px;
+}
+
+.mode-select-instructions-container {
+  display: inline-block;
+}
+
+.title-instructions-section h5 {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  display: none;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+/* pratice/quiz buttons */
+.btn-custom-color {
+  background-color: rgba(255, 207, 64, 1);
+}
+
+.btn-custom-color:hover {
+  background-color: #ffbf00;
+}
+
+.mode-button-row {
+  margin: auto;
+}
+
+.mode-button-col {
+  margin-top: 30px;
+  padding: 15px 0;
+  text-align: center;
+}
+
+.mode-description {
+  background-color: rgba(255, 207, 64, 1);
+  color: black;
+  padding: 20px 20px;
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  text-align: left;
+  border-radius: 10px;
+  font-size: 1.1rem;
+}
+
+.start-button {
+  margin-top: 15px;
+}
+
+/* scales-menu */
+.stats-section {
+  position: relative;
+}
+
+.select-scale-menu {
+  background-color: rgba(255, 207, 64, 0.5);
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+}
+
+.select-scale-menu h1:hover {
+  background-color: rgba(255, 207, 64, 0.8);
+}
+
+.select-scale-menu p {
+  font-size: 1.5rem;
+}
+
+/* game stats section */
+.end-session-btn-container {
+  margin-top: 25px;
+}
+
+.gold-container {
+  background-color: rgba(255, 207, 64, 1);
+  border-radius: 10px;
+  display: inline-block;
+  padding: 10px 15px;
+}
+
+.timer-container {
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+/* keyboard section */
+.keyboard-section {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.keyboard-container {
+  height: 250px;
+  margin: auto;
+  position: relative;
+  width: 95%;
+}
+
+.top-keyboard-row {
+  margin: auto;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+
+@media (max-width: 705px) {
+  .marimba-left-end {
+    width: 3%;
+  }
+
+  .marimba-right-end {
+    width: 3%;
+  }
+}
+
+.bottom-keyboard-row {
+  margin: auto;
+  position: absolute;
+  text-align: center;
+  top: 100px;
+  width: 100%;
+}
+
+.keyboard-note {
+  background-image: url('images/wood.jpg');
+  border: 1px solid #947e6c;
+  border-radius: 10px;
+  height: 120px;
+  max-width: 2.8rem;
+  padding: 0;
+}
+
+.submit-answer-btn-container {
+  margin-top: 10px;
+}
+
+/* result-window */
+.result-window {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 15px;
+  color: white;
+  display: flex;
+  padding: 25px 15px;
+  position: absolute;
+  top: -140%;
+  width: 42rem;
+  z-index: 2;
+}
+
+.result-window-content {
+  margin: auto;
+}
+
+@media (max-width: 705px) {
+  .result-window {
+    width: 99%;
+  }
+}
+
+#continue-btn {
+  margin-top: 10px;
+}
+
+.quiz-result-info-container {
+  margin-bottom: 1rem;
+}
+
+/* general style classes */
+.invisible {
+  visibility: hidden;
+}
+
+.gold {
+  background-image: none;
+  background-color: rgba(255, 207, 64, 1);
+}
+
+.answer {
+  background-color: white;
+  border-radius: 10px;
+  position: absolute;
+  height: 45%;
+  left: 25%;
+  top: 25%;
+  width: 50%;
+  z-index: 1;
+}
+
+.answer-example {
+  background-color: white;
+  height: 30px;
+  width: 15px;
+  border-radius: 10px;
+  margin-left: 5px;
+  display: inline-block;
+  position: relative;
+  top: 5px;
+}
+
+.answer-example-text {
+  /* display: flex; */
+  align-items: center;
+}
+
+.left-col {
+  text-align: right;
+}
+
+.right-col {
+  text-align: left;
+}

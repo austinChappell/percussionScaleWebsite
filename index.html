@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link href="https://fonts.googleapis.com/css2?family=Courgette&family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<link rel="stylesheet" href="scaleWebsiteCss/styles.css">
+
+<title>Percussion Scale Practice</title>
+
+<body id="app-body">
+  <section class="title-instructions-section">
+    <div class="container title-container">
+      <h1 id="app-title">Scale Practice</h1>
+      <div class="mode-select-instructions-container">
+        <h5 class="intro" id="mode-select-instructions">(Select a mode to begin)</h5>
+      </div>
+    </div>
+
+    <div class="row justify-content-center mode-button-row intro">
+      <div class="col-md-4 mode-button-col">
+        <button type="button" class="btn btn-custom-color btn-lg mode-button" id="practice-mode-btn" value="practice">Pracitice Mode</button>
+        <div class="mode-description invisible" id="practice-mode-description">
+          <ul>
+            <li>No time limit</li>
+            <li>End session at any time</li>
+            <li>All scales should be one octave</li>
+          </ul>
+          <a href="#timer-container">
+            <button type="button" class="btn btn-dark btn-lg btn-block start-button" id="practice-start-btn">Start</button>
+          </a>
+
+        </div>
+      </div>
+      <div class="col-md-4 mode-button-col">
+        <button type="button" class="btn btn-custom-color btn-lg mode-button" id="quiz-mode-btn" value="quiz">Quiz Mode</button>
+        <div class="mode-description invisible" id="quiz-mode-description">
+          <ul>
+            <li>Each Question is timed</li>
+            <li>Answers will be submitted automatically after 9 seconds</li>
+            <li>Grade will be posted after the last question</li>
+            <li>Quiz can be taken over again</li>
+            <li>All scales should be one octave</li>
+          </ul>
+          <a href="#timer-container">
+            <button type="button" class="btn btn-dark btn-lg btn-block start-button" id="quiz-start-btn">Start</button>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4 mode-button-col">
+        <button type="button" class="btn btn-custom-color btn-lg mode-button" id="game-mode-btn" value="game">Game Mode</button>
+        <div class="mode-description invisible" id="game-mode-description">
+          <ul>
+            <li>All 12 scales at random</li>
+            <li>Complete the questions as fast as you can</li>
+            <li>All answers must be correct or you lose</li>
+            <li>All scales should be one octave</li>
+          </ul>
+          <a href="#timer-container">
+            <button type="button" class="btn btn-dark btn-lg btn-block start-button" id="game-start-btn">Start</button>
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats-section container">
+    <div class="container end-session-btn-container invisible practice-mode-item">
+      <a href="#app-title">
+        <button class="btn btn-secondary btn-lg end-session-btn" type="button" name="button">End Session</button>
+      </a>
+    </div>
+
+    <div class="row select-scales-row justify-content-center select-scale-menu invisible" id="practice-scale-menu">
+      <div class="col-12">
+        <p id="select-scales-description">Click on a scale to include it in your session. If no scales are selected, all major
+          scales will be included on the session.</p>
+      </div>
+
+      <div class="col-lg-2 col-md-3 col-4">
+        <h1 class="scale-letter" value="C">C</h1>
+      </div>
+      <div class="col-lg-2 col-md-3 col-4">
+        <h1 class="scale-letter" value="Db">Db</h1>
+      </div>
+      <div class="col-lg-2 col-md-3 col-4">
+        <h1 class="scale-letter" value="D">D</h1>
+      </div>
+      <div class="col-lg-2 col-md-3 col-4">
+        <h1 class="scale-letter" value="Eb">Eb</h1>
+      </div>
+      <div class="col-lg-2 col-md-3 col-4">
+        <h1 class="scale-letter" value="E">E</h1>
+      </div>
+      <div class="col-lg-2 col-md-3 col-4">
+        <h1 class="scale-letter" value="F">F</h1>
+      </div>
+      <div class="col-lg-2 col-md-3 col-4">
+        <h1 class="scale-letter" value="Gb">Gb</h1>
+      </div>
+      <div class="col-lg-2 col-md-3 col-4">
+        <h1 class="scale-letter" value="G">G</h1>
+      </div>
+      <div class="col-lg-2 col-md-3 col-4">
+        <h1 class="scale-letter" value="Ab">Ab</h1>
+      </div>
+      <div class="col-lg-2 col-md-3 col-4">
+        <h1 class="scale-letter" value="A">A</h1>
+      </div>
+      <div class="col-lg-2 col-md-3 col-4">
+        <h1 class="scale-letter" value="Bb">Bb</h1>
+      </div>
+      <div class="col-lg-2 col-md-3 col-4">
+        <h1 class="scale-letter" value="B">B</h1>
+      </div>
+      <div class="col">
+        <button class="btn btn-dark btn-lg" id="begin-btn">Begin</button>
+      </div>
+    </div>
+
+    <div class="stats-cotainer">
+      <div class="timer-wrapper quiz-mode-item game-mode-item invisible">
+        <div class="timer-container gold-container" id="timer-container">
+          <h5 id="timer-text">Time Remaining: </h5>
+          <h5 id="timer">10</h5>
+        </div>
+      </div>
+
+      <div class="scale-info-wrapper invisible practice-mode-item quiz-mode-item game-mode-item">
+        <div class="scale-info-container gold-container" id="scale-info-container-text">
+          <h2 id="current-scale-question">Current Scale: </h2>
+          <h5 id="questions-asked-count">Questions Asked: 0</h5>
+          <h5 id="number-scales-correct">Correct Answers: 0</h5>
+          <p>(Click a note to select it)</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="keyboard-section" id="keyboard-section-id">
+    <div class="keyboard-container">
+
+      <div class="row justify-content-center top-keyboard-row">
+        <div class="result-window invisible" id="result-window-id">
+          <div class="result-window-content">
+            <h5 id="result-window-text">Something Here</h5>
+            <div class="continue-btn-container">
+              <button class="btn btn-custom-color btn-lg" id="continue-btn">Continue</button>
+            </div>
+          </div>
+        </div>
+        <div class="marimba-left-end"></div>
+        <div class="col keyboard-note" value="2" id="note-2"></div>
+        <div class="col keyboard-note" value="4" id="note-4"></div>
+        <div class="col keyboard-note invisible"></div>
+        <div class="col keyboard-note" value="7" id="note-7"></div>
+        <div class="col keyboard-note" value="9" id="note-9"></div>
+        <div class="col keyboard-note" value="11" id="note-11"></div>
+        <div class="col keyboard-note invisible"></div>
+        <div class="col keyboard-note" value="14" id="note-14"></div>
+        <div class="col keyboard-note" value="16" id="note-16"></div>
+        <div class="col keyboard-note invisible"></div>
+        <div class="col keyboard-note" value="19" id="note-19"></div>
+        <div class="col keyboard-note" value="21" id="note-21"></div>
+        <div class="col keyboard-note" value="23" id="note-23"></div>
+        <div class="col keyboard-note invisible"></div>
+        <div class="marimba-right-end"></div>
+      </div>
+
+
+      <!-- need to fix keyboard layout on more narrow screen later-->
+
+      <div class="row justify-content-center bottom-keyboard-row">
+        <div class="col keyboard-note" value="1" id="note-1"></div>
+        <div class="col keyboard-note" value="3" id="note-3"></div>
+        <div class="col keyboard-note" value="5" id="note-5"></div>
+        <div class="col keyboard-note" value="6" id="note-6"></div>
+        <div class="col keyboard-note" value="8" id="note-8"></div>
+        <div class="col keyboard-note" value="10" id="note-10"></div>
+        <div class="col keyboard-note" value="12" id="note-12"></div>
+        <div class="col keyboard-note" value="13" id="note-13"></div>
+        <div class="col keyboard-note" value="15" id="note-15"></div>
+        <div class="col keyboard-note" value="17" id="note-17"></div>
+        <div class="col keyboard-note" value="18" id="note-18"></div>
+        <div class="col keyboard-note" value="20" id="note-20"></div>
+        <div class="col keyboard-note" value="22" id="note-22"></div>
+        <div class="col keyboard-note" value="24" id="note-24"></div>
+        <div class="col keyboard-note" value="25" id="note-25"></div>
+      </div>
+    </div>
+
+    <div class="container submit-answer-btn-container practice-mode-item quiz-mode-item game-mode-item invisible">
+      <button class="btn btn-lg btn-secondary submit-answer-btn" type="button" name="button">Submit Answer</button>
+    </div>
+  </section>
+
+  <section>
+
+  </section>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="percussionScaleWebsite.js" charset="utf-8"></script>
+</body>
+
+</html>
