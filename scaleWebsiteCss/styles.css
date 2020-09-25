@@ -90,6 +90,8 @@ h1 {
 /* game stats section */
 .end-session-btn-container {
   margin-top: 25px;
+  position: relative;
+  top: 75px;
 }
 
 .gold-container {
