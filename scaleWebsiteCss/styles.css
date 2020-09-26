@@ -2,7 +2,6 @@ body {
   background-image: url('images/old-yellow-vintage-music-notes-background.jpg');
   background-size: cover;
   font-family: 'PT Serif', serif;
-  padding-bottom: 150px;
   text-align: center;
 }
 
@@ -222,7 +221,6 @@ h1 {
 }
 
 .answer-example-text {
-  /* display: flex; */
   align-items: center;
 }
 
@@ -232,4 +230,16 @@ h1 {
 
 .right-col {
   text-align: left;
+}
+
+.footer {
+  margin-top: 100px;
+  text-align: center;
+  align-content: flex-end;
+  justify-content: baseline;
+}
+
+#copyright {
+  color: white;
+  margin: 0px;
 }

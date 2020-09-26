@@ -84,7 +84,7 @@ $('#begin-btn').click(function() {
   if (quizMode) {
     hideItemShowItem('.select-scale-menu', '.quiz-mode-item');
     scalesList = orderQuizScales(scalesList);
-    timer(900);
+    timer(1000);
   } else {
     hideItemShowItem('.select-scale-menu', '.practice-mode-item');
   }
@@ -103,7 +103,7 @@ function handleContinueBtnClick() {
     displayTryAgain();
   } else {
     answerSubmitted = false;
-    if (quizMode) timer(900);
+    if (quizMode) timer(1000);
     $('.result-window').addClass('invisible');
     resetKeyboard();
     setupQuestion();
