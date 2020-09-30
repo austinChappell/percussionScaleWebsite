@@ -18,21 +18,21 @@ let timeToComplete = 0; //used for time to complete game mode
 /* --- Mode Buttons --- */
 $("#mode-select-instructions").fadeIn(2500);
 
-$('.mode-button').click(function(e) {
+$('.mode-button').click(function (e) {
   $('.mode-description').addClass('invisible');
   $(`#${e.target.value}-mode-description`).removeClass('invisible');
 })
 
-$('#practice-start-btn').click(function() {
+$('#practice-start-btn').click(function () {
   hideItemShowItem('.intro', '.select-scale-menu');
 })
 
-$('#quiz-start-btn').click(function() {
+$('#quiz-start-btn').click(function () {
   quizMode = true;
   hideItemShowItem('.intro', '.select-scale-menu');
 })
 
-$('#game-start-btn').click(function() {
+$('#game-start-btn').click(function () {
   gameMode = true;
   hideItemShowItem('.intro', '.game-mode-item');
   $('#timer-text').html('Time: ');
@@ -42,7 +42,7 @@ $('#game-start-btn').click(function() {
 })
 
 //Closes mode menus when you click outside of them
-$('#app-body').click(function(e) {
+$('#app-body').click(function (e) {
   if (e.target.type !== 'button') {
     $('.mode-description').addClass('invisible');
   }
@@ -56,7 +56,7 @@ function hideItemShowItem(hiddenItem, shownItem) {
 
 /* --- General Click Functions for Select-scale-menu & Keyboard ---*/
 function clickFunction(name, array) {
-  $(name).click(function(e) {
+  $(name).click(function (e) {
     let element = e.target;
     let note = element.getAttribute('value');
 
@@ -78,7 +78,7 @@ function removeNote(array, value) {
 /* --- Select-scale-menu --- */
 clickFunction('.scale-letter', scalesList);
 
-$('#begin-btn').click(function() {
+$('#begin-btn').click(function () {
   if (scalesList.length === 0) scalesList = ['C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B'];
 
   if (quizMode) {
@@ -89,10 +89,12 @@ $('#begin-btn').click(function() {
     hideItemShowItem('.select-scale-menu', '.practice-mode-item');
   }
   setupQuestion();
-})
+});
+
+
 
 /* --- EndSession, Submit, and Continue Buttons --- */
-$('.end-session-btn').click(function() {
+$('.end-session-btn').click(function () {
   location.reload();
 })
 
@@ -114,14 +116,15 @@ function displayTryAgain() {
   gameOver = true;
   $('.continue-btn-container').html(`
       <a href="#app-title">
-        <button class="btn btn-custom-color btn-lg" id="try-again-btn">Try Again</button>
+        <button class="btn btn-custom-color btn-lg" id="try-again-btn">Return to Main Page</button>
       </a>`);
-  $('#try-again-btn').click(function() {
-    location.reload()
-  });
   if (quizMode) {
     displayQuizResult();
   }
+  $('#try-again-btn').click(function () {
+    location.reload()
+  });
+
 }
 
 function resetKeyboard() {
@@ -141,7 +144,7 @@ function handleSubmitBtnClick() {
 
   if (gameMode === true && questionsAsked === scalesList.length) {
     displayTryAgain();
-    setTimeout(function() {
+    setTimeout(function () {
       $('#result-window-text').html(`<h5>Game Over! You Win!!!</h5>
         <h5>You finished all the scales in ${formatTime(timeToComplete)}</h5>
         <h5>Game ID: ${Math.floor(Math.random() * 100000)}`);
@@ -251,6 +254,9 @@ function displayQuizResult() {
       <h5>Take a screen shot of this page to send to your teacher.</h5>
       <h5>Clicking try again we will reload the page and you will not be able to see this score again.</h5>
     </div>`);
+
+  $('.submit-answer-btn-container').addClass('invisible');
+  $('.bottom-end-session-btn-container').addClass('invisible');
 }
 
 /* --- Selecting Scales and checking user answers --- */
@@ -378,4 +384,4 @@ function formatTime(input) {
   milliSeconds = milliSeconds < 10 ? '0' + milliSeconds : milliSeconds;
 
   return minutes > 0 ? `${minutes}:${seconds}:${milliSeconds}` : `${seconds}:${milliSeconds}`;
-}
+};

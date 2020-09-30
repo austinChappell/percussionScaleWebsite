@@ -188,6 +188,10 @@ h1 {
   margin-bottom: 1rem;
 }
 
+.bottom-end-session-btn-container {
+  margin-top: 20px;
+}
+
 /* general style classes */
 .invisible {
   visibility: hidden;
