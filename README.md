@@ -14,5 +14,5 @@ This site was built with html, css and jquery.  It is fully responsive and I was
 ## Link To The Project
 View the project live at this URL  https://mark-mulligan.github.io/percussionScaleWebsite
 
-![Image of Project](./scaleWebsiteCss/images/percussionScaleWebsite.png)
+![Image of Project](./scaleWebsiteCss/images/percussionScaleWebsite.jpg)
 
