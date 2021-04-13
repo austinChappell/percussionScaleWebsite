@@ -12,7 +12,7 @@ This program served its purpose well and was a good resource for helping my stud
 This site was built with html, css and jquery.  It is fully responsive and I was able to add google analytics to it so I can see how many people are using the site and when they are using it.     
 
 ## Link To The Project
-View the project live at this URL  https://markmulligan97.github.io/percussionScaleWebsite
+View the project live at this URL  https://mark-mulligan.github.io/percussionScaleWebsite
 
 ![Image of Project](./scaleWebsiteCss/images/percussionScaleWebsite.png)
 
