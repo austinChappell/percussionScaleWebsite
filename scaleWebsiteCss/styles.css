@@ -1,3 +1,12 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 body {
   background-image: url('images/old-yellow-vintage-music-notes-background.jpg');
   background-size: cover;
@@ -12,6 +21,10 @@ h1 {
   text-align: center;
 }
 
+.fade-in {
+  animation: fadeIn 2500ms forwards;
+}
+
 .title-instructions-section {
   padding: 40px 40px 0px;
 }
@@ -23,7 +36,6 @@ h1 {
 .title-instructions-section h5 {
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 10px;
-  display: none;
   margin-top: 20px;
   padding: 10px;
 }

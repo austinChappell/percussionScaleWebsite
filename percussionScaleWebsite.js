@@ -16,8 +16,6 @@ let gameOver = false; //used to stop stop watch
 let timeToComplete = 0; //used for time to complete game mode
 
 /* --- Mode Buttons --- */
-$("#mode-select-instructions").fadeIn(2500);
-
 $('.mode-button').click(function (e) {
   $('.mode-description').addClass('invisible');
   $(`#${e.target.value}-mode-description`).removeClass('invisible');
@@ -228,7 +226,7 @@ function displayQuizResult() {
           <h5>Score:</h5>
         </div>
         <div class="col-6 right-col">
-          <h5>${Math.round((answersCorrect * 100)/questionsAsked)}%</h5>
+          <h5>${Math.round((answersCorrect * 100) / questionsAsked)}%</h5>
         </div>
         <div class="col-6 left-col">
           <h5>Test ID:</h5>
@@ -316,7 +314,7 @@ function createScaleInNum(startingNote) {
   let scaleInNum = [startingNote];
 
   for (let i = 1; i <= additonalNotesInScale; i++) {
-    (i === 3 || i === 7) ? scaleInNum.push(startingNote += 1): scaleInNum.push(startingNote += 2);
+    (i === 3 || i === 7) ? scaleInNum.push(startingNote += 1) : scaleInNum.push(startingNote += 2);
   }
   return scaleInNum;
 }
